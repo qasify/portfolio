@@ -9,9 +9,24 @@ module.exports = {
       white: "#ffffff",
       black: "#000000",
 
-      background:{
-        dark:'#15191C',
-        light:'#FFFFFF'
+      background: {
+        dark: "#15191C",
+        light: "#FFFFFF",
+        "white-transparent": "rgba(255, 255, 255, 0)",
+      },
+
+      border: {
+        light: "rgba(0, 0, 0, 0.1)",
+        dark: "rgba(255, 255, 255, 0.1)",
+      },
+
+      primary: {
+        light: "#00C853",
+      },
+
+      text: {
+        light: "#444444",
+        dark: "#CECECE",
       },
 
       // Gray
@@ -165,7 +180,16 @@ module.exports = {
     },
     extend: {
       height: {
-        '84vh': '84vh',
+        "84vh": "84vh",
+      },
+      backgroundImage: {
+        "light-gradient":
+          "linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 1) 100%)",
+        "dark-gradient":
+          "linear-gradient(to top, rgba(49, 49, 58, 0) 65%, rgba(49, 49, 58, 0.4) 100%)",
+      },
+      borderRadius: {
+        26: "26px",
       },
     },
   },
