@@ -1,4 +1,4 @@
-const MenuExpander = () => {
+const MenuExpander: React.FC = () => {
   const itemStyle =
     "block h-[3px] bg-gray-2 transition-all duration-300 ease-in-out group-hover:bg-primary-light rounded-full";
   return (

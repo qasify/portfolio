@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { UISwitch } from "./components";
-import NavCard from "./components/NavCard";
+import NavCard from "./components/Layout/NavCard";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);

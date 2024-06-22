@@ -6,7 +6,7 @@ type UISwitchProps = {
   onChange: (event?: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const UISwitch = ({ label, checked, onChange }: UISwitchProps) => {
+const UISwitch: React.FC<UISwitchProps> = ({ label, checked, onChange }) => {
   return (
     <div>
       <label className="relative inline-flex gap-3 items-center hover:cursor-pointer text-text-light dark:text-text-dark">
