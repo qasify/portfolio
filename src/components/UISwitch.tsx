@@ -9,7 +9,7 @@ type UISwitchProps = {
 const UISwitch = ({ label, checked, onChange }: UISwitchProps) => {
   return (
     <div>
-      <label className="relative inline-flex gap-2 items-center hover:cursor-pointer text-gray-1">
+      <label className="relative inline-flex gap-3 items-center hover:cursor-pointer text-gray-2-dark dark:text-white">
         {label}
         <input
           className="sr-only peer"

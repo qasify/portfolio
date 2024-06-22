@@ -21,22 +21,27 @@ function App() {
   };
 
   return (
-    <div className="bg-background-light dark:bg-background-dark w-full h-full flex flex-col gap-4 bg-[url('./assets/images/background.png')]"
+    <div
+      className="bg-background-light dark:bg-background-dark w-full h-full flex flex-col gap-4 bg-[url('./assets/images/background.png')]"
       style={{
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}>
-      <UISwitch
-        label=""
-        checked={isDarkMode}
-        onChange={toggleTheme}
-      />
-      {/* <div className="bg-orange-1 dark:bg-yellow-1">Home</div> */}
-      <div className="h-84vh mx-0 md:mx-[3vh] lg:mx-[6vh] md:my-[8vw]"
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="flex flex-1 justify-end px-3 py-4 bg-background-light dark:bg-background-dark bg-opacity-20">
+        <UISwitch
+          label="Dark Theme"
+          checked={isDarkMode}
+          onChange={toggleTheme}
+        />
+      </div>
+      <div
+        className="h-84vh mx-0 md:mx-[3vh] lg:mx-[6vh] md:my-[8vw]"
         style={{
-          position:'relative',
-        }}>
+          position: "relative",
+        }}
+      >
         <NavCard />
       </div>
     </div>
