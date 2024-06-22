@@ -37,7 +37,7 @@ function App() {
         />
       </div>
       <div
-        className="h-84vh mx-0 md:mx-[3vh] lg:mx-[6vh] md:my-[8vw]"
+        className="h-[60%] mx-0 md:mx-[3%] lg:mx-[6%] md:my-[8%]"
         style={{
           position: "relative",
         }}
