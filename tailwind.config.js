@@ -9,6 +9,11 @@ module.exports = {
       white: "#ffffff",
       black: "#000000",
 
+      background:{
+        dark:'#15191C',
+        light:'#FFFFFF'
+      },
+
       // Gray
       "gray-1": "#6B7280",
       "gray-2": {
@@ -158,7 +163,11 @@ module.exports = {
         dark: "#713F12",
       },
     },
-    extend: {},
+    extend: {
+      height: {
+        '84vh': '84vh',
+      },
+    },
   },
   plugins: [],
 };
