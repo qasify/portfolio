@@ -179,6 +179,9 @@ module.exports = {
       },
     },
     extend: {
+      margin:{
+        '-10rem':'-10rem'
+      },
       height: {
         "84vh": "84vh",
       },
@@ -190,6 +193,19 @@ module.exports = {
       },
       borderRadius: {
         26: "26px",
+      },
+      keyframes: {
+        typing: {
+          '0%': { width: '0%' },
+          '100%': { width: '95%' },
+        },
+        blink: {
+          '0%, 100%': { borderColor: 'transparent',  },
+          '50%': { borderColor: '#00C853',},
+        },
+      },
+      animation: {
+        typing: 'typing 3s steps(30, end) infinite alternate, blink .75s step-end infinite',
       },
     },
   },
