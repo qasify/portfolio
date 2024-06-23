@@ -179,8 +179,8 @@ module.exports = {
       },
     },
     extend: {
-      margin:{
-        '-10rem':'-10rem'
+      margin: {
+        "-10rem": "-10rem",
       },
       height: {
         "84vh": "84vh",
@@ -188,6 +188,8 @@ module.exports = {
       backgroundImage: {
         "light-gradient":
           "linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 1) 100%)",
+        "light-gradient-right":
+          "linear-gradient(to right, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0.8) 100%)",
         "dark-gradient":
           "linear-gradient(to top, rgba(49, 49, 58, 0) 65%, rgba(49, 49, 58, 0.4) 100%)",
       },
@@ -196,16 +198,17 @@ module.exports = {
       },
       keyframes: {
         typing: {
-          '0%': { width: '0%' },
-          '100%': { width: '95%' },
+          "0%": { width: "0%" },
+          "100%": { width: "95%" },
         },
         blink: {
-          '0%, 100%': { borderColor: 'transparent',  },
-          '50%': { borderColor: '#00C853',},
+          "0%, 100%": { borderColor: "transparent" },
+          "50%": { borderColor: "#00C853" },
         },
       },
       animation: {
-        typing: 'typing 3s steps(30, end) infinite alternate, blink .75s step-end infinite',
+        typing:
+          "typing 3s steps(30, end) infinite alternate, blink .75s step-end infinite",
       },
     },
   },

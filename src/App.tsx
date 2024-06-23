@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { UISwitch } from "./components";
 import NavCard from "./components/Layout/NavCard";
 
 function App() {
@@ -29,20 +28,13 @@ function App() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex flex-1 justify-end px-3 py-4 bg-background-light dark:bg-background-dark bg-opacity-20">
-        <UISwitch
-          label="Dark Theme"
-          checked={isDarkMode}
-          onChange={toggleTheme}
-        />
-      </div>
       <div
         className="h-[60%] mx-0 md:mx-[3%] lg:mx-[6%] md:my-[8%]"
         style={{
           position: "relative",
         }}
       >
-        <NavCard />
+        <NavCard isDarkTheme={isDarkMode} onThemeChange={toggleTheme} />
       </div>
     </div>
   );
