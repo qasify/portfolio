@@ -1,28 +1,33 @@
 import BackgroundContainer from "../BackgroundContainer";
+import ProfileWidget from "./ProfileWidget";
 import SideNavigation from "./SideNavigation";
-import profileImage from "../../assets/images/profile.jpg";
 
-const NavCard = () => {
+interface NavCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  isDarkTheme: boolean;
+  onThemeChange: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+const NavCard: React.FC<NavCardProps> = ({
+  isDarkTheme,
+  onThemeChange,
+  className = "",
+  children,
+  ...restProps
+}) => {
   return (
-    <div className="flex h-full justify-center items-center ">
-      <SideNavigation />
-      <BackgroundContainer className="relative w-[700px] overflow-hidden skew-y-1 origin-bottom-left">
-        <img
-          src={profileImage}
-          alt="profile"
-          className="object-cover w-full h-full"
-        />
-        <div className="absolute z-10 h-[25%] bottom-0 left-0 w-full backdrop-blur-[12px]">
-          asdasd
-        </div>
-        <div className="absolute z-20 top-0 left-0 w-full h-full flex items-center justify-center">
-          <span className="text-white text-4xl font-bold">
-            Content Over Image
-          </span>
-        </div>
-      </BackgroundContainer>
-      <BackgroundContainer>Content</BackgroundContainer>
+<div className="flex-1 flex flex-col xl:flex-row justify-center items-center gap-5 xl:gap-0 px-[5%] 2xl:px-[15%]">
+  <div className="flex flex-col xl:flex-row xl:items-center w-full xl:w-[500px] h-auto xl:h-[700px] gap-6 py-6 xl:gap-0 xl:p-0">
+    <div className="relative flex items-center justify-center">
+      <div className="hidden xl:block absolute min-w-full min-h-full z-10 border border-border-primary rounded-36 xl:translate-x-[40%] xl:translate-y-[1%] "></div>
+      <SideNavigation isDarkTheme={isDarkTheme} onThemeChange={onThemeChange} className="w-[100%] xl:w-max"/>
     </div>
+    <ProfileWidget />
+  </div>
+  <BackgroundContainer className="flex flex-1 flex-col xl:flex-row xl:items-center h-auto xl:h-[610px]">
+    Content
+  </BackgroundContainer>
+</div>
+
   );
 };
 

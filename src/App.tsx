@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { UISwitch } from "./components";
 import NavCard from "./components/Layout/NavCard";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme") ?? "dark";
     if (savedTheme) {
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
       setIsDarkMode(savedTheme === "dark");
@@ -22,27 +21,10 @@ function App() {
 
   return (
     <div
-      className="bg-background-light dark:bg-background-dark w-full h-full flex flex-col gap-4 bg-[url('./assets/images/background.png')]"
-      style={{
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="min-h-screen h-full w-full overflow-auto bg-cover bg-center bg-no-repeat bg-background-light dark:bg-background-dark bg-[url('./assets/images/background.png')]"
     >
-      <div className="flex flex-1 justify-end px-3 py-4 bg-background-light dark:bg-background-dark bg-opacity-20">
-        <UISwitch
-          label="Dark Theme"
-          checked={isDarkMode}
-          onChange={toggleTheme}
-        />
-      </div>
-      <div
-        className="h-[60%] mx-0 md:mx-[3%] lg:mx-[6%] md:my-[8%]"
-        style={{
-          position: "relative",
-        }}
-      >
-        <NavCard />
+      <div className="min-h-full flex justify-center items-center"> 
+        <NavCard isDarkTheme={isDarkMode} onThemeChange={toggleTheme} />
       </div>
     </div>
   );
