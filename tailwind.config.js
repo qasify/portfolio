@@ -18,6 +18,7 @@ module.exports = {
       border: {
         light: "rgba(0, 0, 0, 0.1)",
         dark: "rgba(255, 255, 255, 0.1)",
+        primary: "#61ce70",
       },
 
       primary: {
@@ -195,6 +196,7 @@ module.exports = {
       },
       borderRadius: {
         26: "26px",
+        36: "36px",
       },
       keyframes: {
         typing: {

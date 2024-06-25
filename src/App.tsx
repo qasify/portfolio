@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import NavCard from "./components/Layout/NavCard";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme") ?? "dark";
     if (savedTheme) {
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
       setIsDarkMode(savedTheme === "dark");

@@ -15,20 +15,20 @@ const ProfileWidget: React.FC<ProfileWidgetProps> = ({
 }) => {
   return (
     <div className="h-full w-full overflow-hidden rounded-26 bg-transparent xl:skew-y-[6deg] xl:origin-bottom-left">
-      <div className="w-full h-full overflow-hidden rounded-26 xl:skew-y-[-12deg] xl:origin-bottom-left ">
-        <BackgroundContainer className="w-full overflow-hidden xl:skew-y-[12deg] xl:origin-bottom-left ">
+      <div className="relative w-full h-full overflow-hidden rounded-26 xl:skew-y-[-12deg] xl:origin-bottom-left ">
+        <BackgroundContainer className="relative w-full overflow-hidden xl:skew-y-[12deg] xl:origin-bottom-left ">
           <img
             src={profileImage}
             alt="profile"
             className="object-cover w-full h-full"
           />
-          <div
-            className="absolute z-50 flex flex-col justify-between items-center h-[28%] bottom-0 left-0 w-full backdrop-blur-[12px] pt-3
-                 mb-[3.6rem] bg-gradient-to-b from-transparent to-gray-6-dark xl:skew-y-[-12deg]"
+        </BackgroundContainer>
+        <div
+            className="absolute z-50 flex flex-col rounded-br-[24px] justify-between items-center h-[28%] bottom-0 left-0 w-full backdrop-blur-[12px] pt-3 bg-gradient-to-b from-transparent "
           >
-            <div className="w-auto items-center flex flex-col">
-              <p className="text-white text-4xl font-bold">Benjamin Ryan</p>
-              <p className="text-primary-light text-2xl font-semibold overflow-hidden whitespace-nowrap border-r-2 border-black animate-typing">
+            <div className="flex flex-col items-center w-auto">
+              <p className="text-4xl font-bold text-white">Benjamin Ryan</p>
+              <p className="overflow-hidden text-2xl font-semibold border-r-2 border-black text-primary-light whitespace-nowrap animate-typing">
                 Full-Stack Developer
               </p>
             </div>
@@ -79,7 +79,6 @@ const ProfileWidget: React.FC<ProfileWidgetProps> = ({
               />
             </div>
           </div>
-        </BackgroundContainer>
       </div>
     </div>
   );

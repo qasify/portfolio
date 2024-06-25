@@ -18,14 +18,14 @@ const SideNavigation: React.FC<SideNavigationProps> = ({
 }) => {
   return (
     <BackgroundContainer
-      className={`relative h-max w-max flex xl:flex-col items-center gap-8 justify-between px-6 xl:px-0 xl:py-6 translate-x-[50%] z-10 text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark xl:bg-light-gradient-right ${className}`}
+      className={`xl:relative h-max w-max flex xl:flex-col items-center gap-8 justify-between px-6 xl:px-0 xl:py-6 xl:translate-x-[50%] z-10 text-text-light dark:text-text-dark xl:bg-light-gradient-right rounded-full overflow-hidden ${className}`}
       {...restProps}
     >
       {/* Menu button */}
       <MenuExpander />
 
       {/* Menu Items */}
-      <div className="flex xl:flex-col items-center justify-between gap-6">
+      <div className="flex items-center justify-between flex-1 gap-6 xl:flex-col">
         {sideMenuList.map((menuItem, index) => (
           <div
             key={menuItem.key}
@@ -37,13 +37,14 @@ const SideNavigation: React.FC<SideNavigationProps> = ({
             {menuItem.name}
           </div>
         ))}
-      </div>
 
       {/* Theme Switch Button */}
       <IconButton
         onClick={onThemeChange}
+        className="py-4 xl:py-2"
         buttonIcon={isDarkTheme ? AiOutlineSun : IoMoonOutline}
       />
+      </div>
     </BackgroundContainer>
   );
 };
