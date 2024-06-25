@@ -14,17 +14,17 @@ const ProfileWidget: React.FC<ProfileWidgetProps> = ({
   ...restProps
 }) => {
   return (
-    <div className="w-[800px] h-[114%] skew-y-[6deg] overflow-hidden origin-bottom-left rounded-26 bg-transparent">
-      <div className="w-full h-full overflow-hidden skew-y-[-12deg] origin-bottom-left rounded-26 ">
-        <BackgroundContainer className="relative w-full skew-y-[12deg] overflow-hidden origin-bottom-left ">
+    <div className="h-full w-full overflow-hidden rounded-26 bg-transparent xl:skew-y-[6deg] xl:origin-bottom-left">
+      <div className="w-full h-full overflow-hidden rounded-26 xl:skew-y-[-12deg] xl:origin-bottom-left ">
+        <BackgroundContainer className="w-full overflow-hidden xl:skew-y-[12deg] xl:origin-bottom-left ">
           <img
             src={profileImage}
             alt="profile"
             className="object-cover w-full h-full"
           />
           <div
-            className="absolute z-50 h-[28%] bottom-0 left-0 w-full backdrop-blur-[12px] skew-y-[-12deg] pt-3
-                flex flex-col justify-between mb-[3.6rem] bg-gradient-to-b from-transparent to-gray-6-dark items-center"
+            className="absolute z-50 flex flex-col justify-between items-center h-[28%] bottom-0 left-0 w-full backdrop-blur-[12px] pt-3
+                 mb-[3.6rem] bg-gradient-to-b from-transparent to-gray-6-dark xl:skew-y-[-12deg]"
           >
             <div className="w-auto items-center flex flex-col">
               <p className="text-white text-4xl font-bold">Benjamin Ryan</p>
@@ -79,11 +79,6 @@ const ProfileWidget: React.FC<ProfileWidgetProps> = ({
               />
             </div>
           </div>
-          {/* <div className="absolute z-20 top-0 left-0 w-full h-full flex items-center justify-center">
-              <span className="text-white text-4xl font-bold">
-                Content Over Image
-              </span>
-            </div> */}
         </BackgroundContainer>
       </div>
     </div>

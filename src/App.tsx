@@ -21,19 +21,9 @@ function App() {
 
   return (
     <div
-      className="bg-background-light dark:bg-background-dark w-full h-full flex flex-col gap-4 bg-[url('./assets/images/background.png')]"
-      style={{
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="min-h-screen h-full w-full overflow-auto bg-cover bg-center bg-no-repeat bg-background-light dark:bg-background-dark bg-[url('./assets/images/background.png')]"
     >
-      <div
-        className="h-[60%] mx-0 md:mx-[3%] lg:mx-[6%] md:my-[8%]"
-        style={{
-          position: "relative",
-        }}
-      >
+      <div className="min-h-full flex justify-center items-center"> 
         <NavCard isDarkTheme={isDarkMode} onThemeChange={toggleTheme} />
       </div>
     </div>

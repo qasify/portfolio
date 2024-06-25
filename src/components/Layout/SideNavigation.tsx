@@ -18,18 +18,18 @@ const SideNavigation: React.FC<SideNavigationProps> = ({
 }) => {
   return (
     <BackgroundContainer
-      className={`relative h-max flex flex-col items-center gap-8 justify-between w-max py-6 translate-x-[50%] z-10 ${className} text-text-light dark:text-text-dark bg-light-gradient-right`}
+      className={`relative h-max w-max flex xl:flex-col items-center gap-8 justify-between px-6 xl:px-0 xl:py-6 translate-x-[50%] z-10 text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark xl:bg-light-gradient-right ${className}`}
       {...restProps}
     >
       {/* Menu button */}
       <MenuExpander />
 
       {/* Menu Items */}
-      <div className="flex flex-col items-center justify-between gap-6">
+      <div className="flex xl:flex-col items-center justify-between gap-6">
         {sideMenuList.map((menuItem, index) => (
           <div
             key={menuItem.key}
-            className={`flex px-3 pb-1 flex-col w-full items-center justify-center hover:text-primary-light hover:cursor-pointer transition-all duration-300 ease-in-out ${
+            className={`flex py-3 xl:py-0 xl:px-3 xl:pb-1 flex-col w-full items-center justify-center hover:text-primary-light hover:cursor-pointer transition-all duration-300 ease-in-out ${
               index !== sideMenuList.length - 1 ? "border-b-[1px]" : ""
             } border-border-light dark:border-border-dark`}
           >
