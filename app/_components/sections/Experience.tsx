@@ -37,62 +37,61 @@ export default function Experience() {
             return (
               <div
                 key={`${role.company}-${role.startDate}`}
-                className={`relative mb-12 md:mb-16 pl-8 md:pl-0 ${
-                  isLeft ? 'md:pr-[52%]' : 'md:pl-[52%]'
-                }`}
+                className={`relative mb-12 md:mb-16 pl-8 md:pl-0 ${isLeft ? 'md:pr-[52%]' : 'md:pl-[52%]'
+                  }`}
               >
                 {/* Timeline dot */}
                 <div className={`absolute top-6 w-3 h-3 rounded-full border-2 border-accent bg-bg-primary
                   left-0 md:left-1/2 md:-translate-x-1.5 z-10 ${isCurrent ? 'animate-pulse-glow' : ''}`} />
 
-              <ScrollReveal direction={isLeft ? 'left' : 'right'} delay={index * 100}>
-                <GlassCard>
-                  {/* Header */}
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                    <div>
-                      <h3 className="text-lg font-semibold text-text-primary">
-                        {role.position}
-                      </h3>
-                      <p className="text-accent text-sm font-medium">
-                        {role.company}
-                        {role.website && (
-                          <a
-                            href={role.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-text-muted hover:text-accent ml-1.5 transition-colors"
-                          >
-                            ↗
-                          </a>
-                        )}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2 shrink-0">
-                      {isCurrent && (
-                        <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono
+                <ScrollReveal direction={isLeft ? 'left' : 'right'} delay={index * 100}>
+                  <GlassCard>
+                    {/* Header */}
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                      <div>
+                        <h3 className="text-lg font-semibold text-text-primary">
+                          {role.position}
+                        </h3>
+                        <p className="text-accent text-sm font-medium">
+                          {role.company}
+                          {role.website && (
+                            <a
+                              href={role.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-text-muted hover:text-accent ml-1.5 transition-colors"
+                            >
+                              ↗
+                            </a>
+                          )}
+                        </p>
+                      </div>
+                      <div className="flex sm:flex-col-reverse justify-between sm:justify-center items-center sm:items-end gap-1.5 shrink-0 mt-1">
+                        <span className="text-xs font-mono text-text-muted">{dateRange}</span>
+                        {isCurrent && (
+                          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono
                           text-emerald border border-emerald/20 bg-emerald/5 rounded-full">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald" />
-                          Current
-                        </span>
-                      )}
-                      <span className="text-xs font-mono text-text-muted">{dateRange}</span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald" />
+                            Current
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Location */}
-                  <p className="text-xs font-mono text-text-dim mb-4">📍 {role.location}</p>
+                    {/* Location */}
+                    <p className="text-xs font-mono text-text-dim mb-4">📍 {role.location}</p>
 
-                  {/* Highlights */}
-                  <ul className="space-y-2">
-                    {role.highlights.map((highlight, i) => (
-                      <li key={i} className="flex gap-2 text-sm text-text-secondary leading-relaxed">
-                        <span className="text-accent mt-1 shrink-0">→</span>
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </GlassCard>
-              </ScrollReveal>
+                    {/* Highlights */}
+                    <ul className="space-y-2">
+                      {role.highlights.map((highlight, i) => (
+                        <li key={i} className="flex gap-2 text-sm text-text-secondary leading-relaxed">
+                          <span className="text-accent mt-1 shrink-0">→</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </GlassCard>
+                </ScrollReveal>
               </div>
             );
           })}

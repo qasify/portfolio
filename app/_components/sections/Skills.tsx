@@ -58,10 +58,11 @@ export default function Skills() {
             const percent = LEVEL_PERCENT[category.level] || 70;
 
             return (
-              <ScrollReveal delay={index * 100} key={category.name}>
+              <ScrollReveal delay={index * 100} key={category.name} className="h-full">
                 <div
                   className="rounded-xl border border-border-subtle bg-bg-card p-5
-                  hover:border-border-glow hover:bg-bg-card-hover transition-all duration-300 group"
+                  hover:border-border-glow hover:bg-bg-card-hover transition-all duration-300 group
+                  flex flex-col h-full"
                 >
                   {/* Header */}
                   <div className="flex items-center justify-between mb-3">

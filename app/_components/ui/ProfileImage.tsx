@@ -28,35 +28,6 @@ export default function ProfileImage() {
 
   return (
     <div className="relative flex items-center justify-center">
-      {/* Orbiting tech tags */}
-      <div
-        className={`absolute w-[300px] h-[300px] sm:w-[340px] sm:h-[340px] transition-opacity duration-700 ${mounted ? 'opacity-100' : 'opacity-0'}`}
-      >
-        {ORBIT_TAGS.map((tag, i) => {
-          const angleDeg = (360 / ORBIT_TAGS.length) * i;
-          const orbitDelay = `${-(i * (20 / ORBIT_TAGS.length))}s`;
-
-          return (
-            <div
-              key={tag}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_20s_linear_infinite]"
-              style={{ animationDelay: orbitDelay }}
-            >
-              <span
-                className="inline-block px-2.5 py-1 rounded-md bg-bg-card/80 backdrop-blur-sm border border-border-subtle
-                  text-[10px] font-mono text-text-muted whitespace-nowrap
-                  hover:border-accent/40 hover:text-accent transition-colors"
-                style={{
-                  transform: `rotate(${angleDeg}deg) translateX(150px) rotate(-${angleDeg}deg)`,
-                }}
-              >
-                {tag}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-
       {/* Main image container with 3D tilt */}
       <div
         ref={containerRef}

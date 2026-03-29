@@ -23,8 +23,8 @@ export default function Education() {
             const dateRange = formatDateRange(entry.startDate, entry.endDate);
 
             return (
-              <ScrollReveal delay={index * 150} key={entry.institution}>
-                <GlassCard>
+              <ScrollReveal delay={index * 150} key={entry.institution} className="h-full">
+                <GlassCard className="h-full">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/15 to-purple/15
                     flex items-center justify-center shrink-0 border border-accent/10">
