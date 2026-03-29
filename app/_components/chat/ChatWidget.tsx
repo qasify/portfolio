@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import type { ChatMessage as ChatMessageType, ChatResponse } from '@/types';
 import ChatMessage from './ChatMessage';
 import ChatInput from './ChatInput';
+import { useNudge } from '../ui/NudgeContext';
 
 const WELCOME_MESSAGE: ChatMessageType = {
   id: 'welcome',
@@ -25,6 +26,9 @@ export default function ChatWidget() {
   const [loading, setLoading] = useState(false);
   const [dynamicSuggestions, setDynamicSuggestions] = useState<string[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
+  
+  // Proactive Nudge State
+  const { activeNudge, clearNudge } = useNudge();
 
   // Auto-scroll
   useEffect(() => {
@@ -89,11 +93,53 @@ export default function ChatWidget() {
   }, [messages]);
 
   return (
-    <>
-      {/* Floating toggle button — moved to bottom-right, above the Next.js dev indicator */}
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+      
+      {/* Active Nudge Bubble */}
+      {!isOpen && activeNudge && (
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => {
+            setIsOpen(true);
+            sendMessage(activeNudge);
+            clearNudge();
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setIsOpen(true);
+              sendMessage(activeNudge);
+              clearNudge();
+            }
+          }}
+          className="mb-4 relative animate-fade-in-up bg-bg-card border border-border-glow 
+            px-4 py-3 rounded-2xl rounded-br-sm shadow-xl shadow-accent/10 max-w-[280px]
+            text-sm text-text-primary text-left hover:border-accent/40 transition-colors group cursor-pointer"
+        >
+          <div className="flex items-start gap-2">
+            <div className="w-6 h-6 shrink-0 rounded bg-gradient-to-br from-accent to-emerald flex items-center justify-center text-bg-primary text-[10px] font-bold mt-0.5">
+              Q
+            </div>
+            <div>
+              <p className="text-text-secondary text-xs font-mono mb-1">Incoming Message...</p>
+              <p className="leading-snug">{activeNudge}</p>
+              <p className="text-accent text-[10px] font-mono mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Click to ask</p>
+            </div>
+          </div>
+          <button 
+            onClick={(e) => { e.stopPropagation(); clearNudge(); }}
+            className="absolute top-2 right-2 text-text-muted hover:text-text-primary"
+            aria-label="Dismiss"
+          >
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+      )}
+
+      {/* Floating toggle button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full
+        onClick={() => { setIsOpen(!isOpen); if (!isOpen) clearNudge(); }}
+        className={`w-14 h-14 rounded-full
           bg-gradient-to-r from-accent to-emerald text-bg-primary
           flex items-center justify-center shadow-lg shadow-accent/25
           hover:shadow-xl hover:shadow-accent/30 hover:scale-105
@@ -114,7 +160,7 @@ export default function ChatWidget() {
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)]
+        <div className="absolute bottom-20 right-0 w-[380px] max-w-[calc(100vw-2rem)]
           h-[520px] max-h-[60vh] rounded-2xl
           bg-bg-primary/95 backdrop-blur-xl border border-border-subtle
           shadow-2xl shadow-black/40 flex flex-col overflow-hidden
@@ -181,6 +227,6 @@ export default function ChatWidget() {
           <ChatInput onSend={sendMessage} disabled={loading} />
         </div>
       )}
-    </>
+    </div>
   );
 }

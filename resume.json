@@ -155,10 +155,15 @@
         "LaunchDarkly A/B test",
         "Jest"
       ],
-      "filterTags": ["React / Next.js", "Node.js"],
+      "filterTags": [
+        "React / Next.js",
+        "Node.js"
+      ],
       "geoRestriction": {
         "message": "Care.com is currently available in the USA only. You may need a US location or VPN to access the website.",
-        "regions": ["US"]
+        "regions": [
+          "US"
+        ]
       },
       "media": {
         "screenshots": [],
@@ -169,7 +174,7 @@
     {
       "name": "Aumpire - Financial/Audit Management System",
       "description": "Engineered a robust backend architecture using Node.js and Supabase (PostgreSQL), implementing complex Row-Level Security (RLS) policies for multi-tenant data isolation and high-performance SQL indexing.",
-      "url": null,
+      "url": "https://aumpire.vercel.app/",
       "keywords": [
         "Node.js",
         "Next.js",
@@ -179,7 +184,10 @@
         "Database Triggers",
         "SQL Functions"
       ],
-      "filterTags": ["React / Next.js", "Node.js"],
+      "filterTags": [
+        "React / Next.js",
+        "Node.js"
+      ],
       "geoRestriction": null,
       "media": {
         "screenshots": [],
@@ -198,7 +206,10 @@
         "Redis",
         "WebSockets"
       ],
-      "filterTags": ["React / Next.js", "Node.js"],
+      "filterTags": [
+        "React / Next.js",
+        "Node.js"
+      ],
       "geoRestriction": null,
       "media": {
         "screenshots": [],
@@ -216,7 +227,9 @@
         "TypeScript",
         "Material UI"
       ],
-      "filterTags": ["React / Next.js"],
+      "filterTags": [
+        "React / Next.js"
+      ],
       "geoRestriction": null,
       "media": {
         "screenshots": [],
@@ -234,7 +247,11 @@
         "Node.js",
         "Firebase"
       ],
-      "filterTags": ["React / Next.js", "Node.js", "Mobile"],
+      "filterTags": [
+        "React / Next.js",
+        "Node.js",
+        "Mobile"
+      ],
       "geoRestriction": null,
       "media": {
         "screenshots": [],
@@ -252,7 +269,10 @@
         "Python",
         "Machine Learning"
       ],
-      "filterTags": ["React / Next.js", "AI / ML"],
+      "filterTags": [
+        "React / Next.js",
+        "AI / ML"
+      ],
       "geoRestriction": null,
       "media": {
         "screenshots": [],

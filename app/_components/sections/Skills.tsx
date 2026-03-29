@@ -3,6 +3,7 @@
 import SectionHeader from '../ui/SectionHeader';
 import ScrollReveal from '../ui/ScrollReveal';
 import { getSkills } from '@/data/resume';
+import PhysicsSkills from '../ui/PhysicsSkills';
 
 const LEVEL_PERCENT: Record<string, number> = {
   Advanced: 90,
@@ -28,6 +29,9 @@ const CATEGORY_ICONS: Record<string, string> = {
 
 export default function Skills() {
   const skills = getSkills();
+  
+  // Flatten keywords for the physics engine
+  const allSkillKeywords = skills.flatMap(s => s.keywords || []).map(k => ({ name: k, level: 1 }));
 
   return (
     <section id="skills" className="py-24 px-4 sm:px-6 bg-bg-secondary/30">
@@ -38,6 +42,13 @@ export default function Skills() {
             title="Technical Skills"
             description="Not buzzwords — daily tools used across production systems serving millions."
           />
+        </ScrollReveal>
+
+        {/* Physics Engine Interactive Skills Cloud */}
+        <ScrollReveal delay={100}>
+          <div className="mb-12 mt-6">
+            <PhysicsSkills skills={allSkillKeywords} />
+          </div>
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">

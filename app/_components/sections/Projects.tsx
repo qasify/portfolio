@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useRef } from 'react';
 import SectionHeader from '../ui/SectionHeader';
 import GlassCard from '../ui/GlassCard';
 import TechBadge from '../ui/TechBadge';
@@ -8,6 +8,7 @@ import ScrollReveal from '../ui/ScrollReveal';
 import ProjectModal from './ProjectModal';
 import GeoPopup from './GeoPopup';
 import { getProjects, getProjectFilterTags } from '@/data/resume';
+import { useSectionNudge } from '../ui/NudgeContext';
 import type { CVProject } from '@/data/resume';
 
 export default function Projects() {
@@ -16,6 +17,9 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [selectedProject, setSelectedProject] = useState<CVProject | null>(null);
   const [geoPopup, setGeoPopup] = useState<{ message: string; url: string } | null>(null);
+
+  // Proactive Nudge for the entire Projects section
+  const projectsRef = useSectionNudge("I noticed you're looking at my projects. Want a quick summary of my biggest technical achievement?", 6000);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === 'all') return projects;
@@ -39,7 +43,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6">
+    <section id="projects" ref={projectsRef as any} className="py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <SectionHeader

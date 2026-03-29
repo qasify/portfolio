@@ -4,12 +4,16 @@ import SectionHeader from '../ui/SectionHeader';
 import GlassCard from '../ui/GlassCard';
 import ScrollReveal from '../ui/ScrollReveal';
 import { getWorkExperience, formatDateRange } from '@/data/resume';
+import { useSectionNudge } from '../ui/NudgeContext';
 
 export default function Experience() {
   const work = getWorkExperience();
 
+  // Proactive Nudge
+  const expRef = useSectionNudge("I led the frontend architecture for the Seeker Hiring Hub, increasing conversion by 70%. Want to know the tech stack?", 8000);
+
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 bg-bg-secondary/30">
+    <section id="experience" ref={expRef as any} className="py-24 px-4 sm:px-6 bg-bg-secondary/30">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal>
           <SectionHeader

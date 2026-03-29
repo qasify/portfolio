@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from './ThemeProvider';
+import { useMode } from './ModeContext';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -64,6 +65,35 @@ function ThemeToggle() {
   );
 }
 
+
+function ModeToggle() {
+  const { mode, setMode } = useMode();
+  return (
+    <button
+      onClick={() => setMode(mode === 'recruiter' ? 'engineer' : 'recruiter')}
+      className="relative flex items-center h-8 w-24 rounded-full bg-bg-secondary p-1 border border-border-subtle overflow-hidden"
+      aria-label="Toggle persona mode"
+    >
+      <div
+        className={`absolute inset-y-1 left-1 w-[42px] border rounded-full transition-all duration-300 shadow-sm
+        ${mode === 'engineer' ? 'translate-x-[46px] bg-accent border-accent shadow-accent/20' : 'translate-x-0 bg-bg-card border-border-glow'}`}
+      />
+      <div
+        className={`relative flex-1 flex justify-center z-10 text-[10px] font-mono tracking-wide transition-colors duration-300 ${mode === 'recruiter' ? 'text-text-primary font-medium' : 'text-text-muted'}`}
+        title="Recruiter Mode: Clean, metric-focused portfolio"
+      >
+        REC
+      </div>
+      <div
+        className={`relative flex-1 flex justify-center z-10 text-[10px] font-mono tracking-wide transition-colors duration-300 ${mode === 'engineer' ? 'text-bg-primary font-bold' : 'text-text-primary'}`}
+        title="Engineer Mode: Technical X-Ray blueprint overlay"
+      >
+        ENG
+      </div>
+    </button>
+  );
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -76,11 +106,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-bg-primary/80 backdrop-blur-xl border-b border-border-subtle shadow-lg shadow-black/10'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-bg-primary/80 backdrop-blur-xl border-b border-border-subtle shadow-lg shadow-black/10'
+        : 'bg-transparent'
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
@@ -107,13 +136,22 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            {/* Optional Mode Toggle */}
+            <div className="hidden lg:flex ml-2 pl-4 border-l border-border-subtle items-center gap-2">
+              <ModeToggle />
+              <div className="hidden xl:flex items-center gap-2 ml-2 px-2 py-1 bg-bg-secondary rounded border border-border-subtle text-[10px] font-mono text-text-muted cursor-default" title="Command Palette">
+                <span className="text-[14px]">⌘</span>K
+              </div>
+            </div>
+
             <div className="ml-2 pl-2 border-l border-border-subtle">
               <ThemeToggle />
             </div>
           </div>
 
-          {/* Mobile: theme toggle + hamburger */}
-          <div className="md:hidden flex items-center gap-1">
+          {/* Mobile: mode/theme toggle + hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <ModeToggle />
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}

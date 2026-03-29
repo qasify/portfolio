@@ -109,7 +109,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator — outside content div, pinned to section bottom */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-fade-in [animation-delay:1200ms]">
+      <div className="absolute bottom-14 left-1/2 -translate-x-1/2 z-10 animate-fade-in [animation-delay:1200ms]">
         <div className="w-6 h-10 rounded-full border-2 border-text-dim flex items-start justify-center p-1.5">
           <div className="w-1 h-2.5 rounded-full bg-accent animate-[slide-up_1.5s_ease-in-out_infinite]" />
         </div>

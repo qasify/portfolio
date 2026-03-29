@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider, ThemeScript } from './_components/ui/ThemeProvider';
+import { ModeProvider } from './_components/ui/ModeContext';
+import { NudgeProvider } from './_components/ui/NudgeContext';
+import CommandPalette from './_components/ui/CommandPalette';
+import XRayCursor from './_components/ui/XRayCursor';
 import './globals.css';
 
 const geistSans = Geist({
@@ -49,7 +53,15 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body className="bg-bg-primary text-text-primary font-[family-name:var(--font-geist-sans)] transition-colors duration-300">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <NudgeProvider>
+            <ModeProvider>
+              {children}
+              <CommandPalette />
+              <XRayCursor />
+            </ModeProvider>
+          </NudgeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
