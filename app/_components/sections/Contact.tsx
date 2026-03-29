@@ -23,7 +23,7 @@ export default function Contact() {
         </ScrollReveal>
 
         <ScrollReveal delay={150}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
             {/* Email */}
             <a
               href={`mailto:${basics.email}`}
@@ -82,6 +82,28 @@ export default function Contact() {
                 <div className="text-left">
                   <p className="text-text-dim text-xs font-mono">LinkedIn</p>
                   <p className="text-text-primary text-sm font-medium">Muhammad Qasim</p>
+                </div>
+              </a>
+            )}
+
+            {/* GitHub */}
+            {basics.github && (
+              <a
+                href={basics.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-4 rounded-xl border border-border-subtle
+                  bg-bg-card hover:border-border-glow hover:bg-bg-card-hover transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-text-primary/10 flex items-center justify-center
+                  group-hover:bg-text-primary/20 transition-colors">
+                  <svg className="w-5 h-5 text-text-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.08.38-1.96 1-2.66-.1-.25-.44-1.26.1-2.62 0 0 .81-.26 2.67 1a9.23 9.23 0 0 1 4.86 0c1.86-1.26 2.67-1 2.67-1 .54 1.36.2 2.37.1 2.62.62.7 1 1.58 1 2.66 0 3.82-2.34 4.66-4.57 4.9.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="text-text-dim text-xs font-mono">GitHub</p>
+                  <p className="text-text-primary text-sm font-medium">@qasify</p>
                 </div>
               </a>
             )}

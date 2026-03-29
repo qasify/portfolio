@@ -10,6 +10,7 @@ export interface CVBasics {
   email: string;
   phone: string;
   linkedin?: string;
+  github?: string;
 }
 
 export interface CVWork {
