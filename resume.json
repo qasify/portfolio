@@ -1,0 +1,295 @@
+{
+  "selectedTemplate": 1,
+  "headings": {
+    "education": "Education",
+    "skills": "Technical Skills",
+    "projects": "Key Projects & Achievements",
+    "awards": "Certifications & Achievements"
+  },
+  "basics": {
+    "name": "Muhammad Qasim",
+    "email": "qasimwork0@gmail.com",
+    "phone": "+92 301 7705367",
+    "linkedin": "https://www.linkedin.com/in/muhammad-qasim-0001b0222/"
+  },
+  "education": [
+    {
+      "institution": "FAST - National University of Computer & Emerging Sciences",
+      "location": "Lahore, Pakistan",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2018-01-01",
+      "endDate": "2022-01-01",
+      "gpa": null
+    },
+    {
+      "institution": "Punjab Group of Colleges",
+      "location": "Bahawalpur, Pakistan",
+      "area": "Computer Science",
+      "studyType": "Intermediate (ICS)",
+      "startDate": "2016-01-01",
+      "endDate": "2018-01-01",
+      "gpa": null
+    }
+  ],
+  "work": [
+    {
+      "company": "Care.com",
+      "location": "Remote",
+      "position": "Senior Frontend Engineer",
+      "website": "https://www.care.com",
+      "startDate": "2024-10-01",
+      "endDate": null,
+      "highlights": [
+        "Led and developed critical enhancements for caregiver discovery and hiring flows, optimizing large-scale microfrontends that serve millions of users on the Core platform.",
+        "Optimized search and filtering, reducing response times from seconds to sub-second performance and delivering Saved Search functionality",
+        "Owned frontend implementation for the Seeker Hiring Hub, which supported a 70% increase in job creation and hiring conversions",
+        "Executed A/B tests and implemented analytics-driven enhancements to support platform decisions.",
+        "Delivered frontend features for AI-assisted job description creation and specialized needs flows for Senior and Adult care"
+      ]
+    },
+    {
+      "company": "Strategic Systems International (SSI)",
+      "location": "Lahore, Pakistan",
+      "position": "Full-Stack Web Developer to Senior Frontend Engineer",
+      "website": null,
+      "startDate": "2022-06-01",
+      "endDate": null,
+      "highlights": [
+        "Designed and developed enterprise-scale web applications using React, Next.js, Node.js, TypeScript, and GraphQL",
+        "Led cross-functional collaboration in agile environments to deliver data-driven features",
+        "Mentored junior engineers and contributed to architectural decisions and code reviews"
+      ]
+    },
+    {
+      "company": "TapsnClicks",
+      "location": "Lahore, Pakistan",
+      "position": "Android Developer Intern",
+      "website": null,
+      "startDate": "2021-06-01",
+      "endDate": "2021-09-01",
+      "highlights": [
+        "Developed a native Android application using Kotlin with Firebase integration",
+        "Published mobile application on the Google Play Store with over 1,000 downloads"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "level": "Advanced",
+      "keywords": [
+        "React",
+        "Next.js",
+        "TS/JS",
+        "Tailwind CSS",
+        "MFEs",
+        "React Native",
+        "MUI",
+        "Angular",
+        "Storybook"
+      ]
+    },
+    {
+      "name": "Backend",
+      "level": "Advanced",
+      "keywords": [
+        "Node.js",
+        "NestJS",
+        "Express.js",
+        "GraphQL",
+        "REST APIs",
+        "Python",
+        "Django"
+      ]
+    },
+    {
+      "name": "Databases and Caching",
+      "level": "Intermediate",
+      "keywords": [
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "Firebase",
+        "MSSQL",
+        "Supabase"
+      ]
+    },
+    {
+      "name": "DevOps and Tooling",
+      "level": "Intermediate",
+      "keywords": [
+        "Docker",
+        "Git",
+        "CI/CD",
+        "LaunchDarkly",
+        "Sentry",
+        "Splunk"
+      ]
+    },
+    {
+      "name": "Testing and Analytics",
+      "level": "Advanced",
+      "keywords": [
+        "Jest",
+        "Playwright",
+        "Cypress",
+        "Amplitude",
+        "A/B Testing",
+        "Performance Optimization"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Care.com - Seeker Hiring Hub and Platform Optimization",
+      "description": "Owned frontend implementation for the premium hiring experience, redesigning the end-to-end hiring flow, optimizing caregiver search, and delivering analytics-driven features that contributed to a 70% increase in job success.",
+      "url": "https://www.care.com",
+      "keywords": [
+        "React",
+        "Next.js",
+        "Apollo GraphQL",
+        "NestJS",
+        "Microfrontends",
+        "Amplitude",
+        "LaunchDarkly A/B test",
+        "Jest"
+      ],
+      "filterTags": ["React / Next.js", "Node.js"],
+      "geoRestriction": {
+        "message": "Care.com is currently available in the USA only. You may need a US location or VPN to access the website.",
+        "regions": ["US"]
+      },
+      "media": {
+        "screenshots": [],
+        "recordings": []
+      },
+      "details": "Led the frontend architecture for Care.com's premium hiring experience, the Seeker Hiring Hub. This involved redesigning the complete end-to-end hiring flow across a large-scale microfrontend system. Key contributions include optimizing caregiver search from seconds to sub-second performance, implementing Saved Search functionality, and delivering AI-assisted job description creation. The work was validated through A/B tests using LaunchDarkly and Amplitude analytics, directly contributing to a 70% increase in job creation and hiring conversions across the platform."
+    },
+    {
+      "name": "Aumpire - Financial/Audit Management System",
+      "description": "Engineered a robust backend architecture using Node.js and Supabase (PostgreSQL), implementing complex Row-Level Security (RLS) policies for multi-tenant data isolation and high-performance SQL indexing.",
+      "url": null,
+      "keywords": [
+        "Node.js",
+        "Next.js",
+        "PostgreSQL",
+        "Supabase",
+        "RLS",
+        "Database Triggers",
+        "SQL Functions"
+      ],
+      "filterTags": ["React / Next.js", "Node.js"],
+      "geoRestriction": null,
+      "media": {
+        "screenshots": [],
+        "recordings": []
+      },
+      "details": "Architected the complete backend system for Aumpire, a multi-tenant financial and audit management platform. Built with Node.js and Supabase (PostgreSQL), the system features complex Row-Level Security (RLS) policies ensuring strict data isolation between tenants. Implemented high-performance SQL indexing, database triggers for automated workflows, and SQL functions for complex business logic. The frontend was built with Next.js for a responsive, real-time audit management experience."
+    },
+    {
+      "name": "Olmatic - IoT Data Visualization Platform",
+      "description": "Architected a full-stack IoT dashboard with real-time visualization for over 1,000 connected devices, achieving major performance gains using Redis caching and WebSockets.",
+      "url": null,
+      "keywords": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Redis",
+        "WebSockets"
+      ],
+      "filterTags": ["React / Next.js", "Node.js"],
+      "geoRestriction": null,
+      "media": {
+        "screenshots": [],
+        "recordings": []
+      },
+      "details": "Full-stack IoT dashboard delivering real-time data visualization for 1,000+ connected devices. The system uses WebSockets for live data streaming and Redis caching for high-performance data retrieval. Built with React and Next.js on the frontend and Node.js on the backend, the platform handles high-frequency sensor data updates with charts, alerts, and device management capabilities."
+    },
+    {
+      "name": "Skillynx - E-Learning Platform",
+      "description": "Built a responsive e-learning platform supporting thousands of concurrent users with reusable components and accessibility-compliant design.",
+      "url": null,
+      "keywords": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Material UI"
+      ],
+      "filterTags": ["React / Next.js"],
+      "geoRestriction": null,
+      "media": {
+        "screenshots": [],
+        "recordings": []
+      },
+      "details": "Responsive e-learning platform built with React, Next.js, and TypeScript. Supports thousands of concurrent users with a component library built on Material UI. Features include course management, progress tracking, video lessons, quizzes, and an accessibility-compliant design following WCAG guidelines."
+    },
+    {
+      "name": "TapnHire",
+      "description": "Developed a hybrid web and mobile marketplace connecting service providers with customers, including admin dashboards and analytics.",
+      "url": null,
+      "keywords": [
+        "React",
+        "React Native",
+        "Node.js",
+        "Firebase"
+      ],
+      "filterTags": ["React / Next.js", "Node.js", "Mobile"],
+      "geoRestriction": null,
+      "media": {
+        "screenshots": [],
+        "recordings": []
+      },
+      "details": "Hybrid web and mobile marketplace connecting service providers with customers. The web app uses React with admin dashboards and analytics, while the mobile app is built with React Native for cross-platform deployment. Backend powered by Node.js with Firebase for real-time data syncing, authentication, and push notifications."
+    },
+    {
+      "name": "Disease Prediction System",
+      "description": "Built an AI-powered disease prediction system with 85 percent accuracy using a trained machine learning model and secure data handling.",
+      "url": null,
+      "keywords": [
+        "React",
+        "Django",
+        "Python",
+        "Machine Learning"
+      ],
+      "filterTags": ["React / Next.js", "AI / ML"],
+      "geoRestriction": null,
+      "media": {
+        "screenshots": [],
+        "recordings": []
+      },
+      "details": "AI-powered disease prediction system achieving 85% prediction accuracy. The frontend is built with React, while the backend uses Django and Python for serving the trained machine learning model. The system features secure data handling, patient data input forms, prediction results visualization, and model performance metrics."
+    }
+  ],
+  "awards": [
+    {
+      "title": "Certified Frontend Developer (React and Next.js)",
+      "date": null,
+      "awarder": "HackerRank",
+      "summary": "Professional certification validating advanced React and Next.js skills"
+    },
+    {
+      "title": "React (Basic) Certification",
+      "date": null,
+      "awarder": "HackerRank",
+      "summary": "Demonstrated foundational proficiency in React"
+    },
+    {
+      "title": "70 Percent Job Creation Increase",
+      "date": null,
+      "awarder": "Care.com",
+      "summary": "Frontend contributions to a highly successful platform initiative that increased hiring conversions by 70 percent"
+    }
+  ],
+  "certifications": [],
+  "sections": [
+    "templates",
+    "profile",
+    "work",
+    "skills",
+    "projects",
+    "education",
+    "awards",
+    "certifications"
+  ]
+}
