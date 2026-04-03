@@ -5,6 +5,7 @@ import { ModeProvider } from './_components/ui/ModeContext';
 import { NudgeProvider } from './_components/ui/NudgeContext';
 import CommandPalette from './_components/ui/CommandPalette';
 import XRayCursor from './_components/ui/XRayCursor';
+import { Analytics } from "@vercel/analytics/next"
 import './globals.css';
 
 const geistSans = Geist({
@@ -59,6 +60,7 @@ export default function RootLayout({
               {children}
               <CommandPalette />
               <XRayCursor />
+              <Analytics />
             </ModeProvider>
           </NudgeProvider>
         </ThemeProvider>
