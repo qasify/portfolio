@@ -1,21 +1,21 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
-const ROLES = [
-  'Senior Frontend Engineer',
-  'React & Next.js Specialist',
-  'Scalable System Builder',
-  'Performance Optimizer',
-];
+import { getBasics, getHero } from '@/data/resume';
 
 export default function Hero() {
+  const basics = getBasics();
+  const hero = getHero();
+  const nameParts = basics.name.split(' ');
+  const firstName = nameParts.slice(0, -1).join(' ');
+  const lastName = nameParts[nameParts.length - 1];
+
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentRole = ROLES[roleIndex];
+    const currentRole = hero.roles[roleIndex];
     let timeout: NodeJS.Timeout;
 
     if (!isDeleting && displayed.length < currentRole.length) {
@@ -30,11 +30,11 @@ export default function Hero() {
       }, 30);
     } else if (isDeleting && displayed.length === 0) {
       setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % ROLES.length);
+      setRoleIndex((prev) => (prev + 1) % hero.roles.length);
     }
 
     return () => clearTimeout(timeout);
-  }, [displayed, isDeleting, roleIndex]);
+  }, [displayed, isDeleting, roleIndex, hero.roles]);
 
   return (
     <section
@@ -56,15 +56,15 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-glow bg-accent/5
           text-sm text-accent mb-8 animate-fade-in">
           <span className="w-2 h-2 rounded-full bg-emerald animate-pulse-glow" />
-          Available for opportunities
+          {hero.statusBadge}
         </div>
 
         {/* Name */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-text-primary mb-4 animate-fade-in-up
           [animation-delay:200ms] leading-tight">
-          Muhammad{' '}
+          {firstName}{' '}
           <span className="bg-gradient-to-r from-accent via-accent-light to-emerald bg-clip-text text-transparent">
-            Qasim
+            {lastName}
           </span>
         </h1>
 
@@ -79,8 +79,7 @@ export default function Hero() {
         {/* Tagline */}
         <p className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up
           [animation-delay:600ms] leading-relaxed">
-          Building scalable frontend systems that serve millions.
-          Not just pages — platforms that perform.
+          {hero.tagline}
         </p>
 
         {/* CTA buttons */}

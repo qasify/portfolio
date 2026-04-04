@@ -2,7 +2,7 @@
 
 import SectionHeader from '../ui/SectionHeader';
 import ScrollReveal from '../ui/ScrollReveal';
-import { getSkills } from '@/data/resume';
+import { getSkills, getSectionHeader } from '@/data/resume';
 import PhysicsSkills from '../ui/PhysicsSkills';
 
 const LEVEL_PERCENT: Record<string, number> = {
@@ -14,21 +14,24 @@ const LEVEL_PERCENT: Record<string, number> = {
 const CATEGORY_GRADIENTS: Record<string, string> = {
   Frontend: 'from-accent to-accent-light',
   Backend: 'from-emerald to-accent',
-  'Databases and Caching': 'from-purple to-accent',
-  'DevOps and Tooling': 'from-amber to-accent',
-  'Testing and Analytics': 'from-rose to-accent',
+  'Databases & Caching': 'from-purple to-accent',
+  'DevOps & Tooling': 'from-amber to-accent',
+  'Testing & Analytics': 'from-rose to-accent',
+  'AI & Agentic Workflows': 'from-accent-light to-emerald',
 };
 
 const CATEGORY_ICONS: Record<string, string> = {
   Frontend: '🎨',
   Backend: '⚙️',
-  'Databases and Caching': '🗄️',
-  'DevOps and Tooling': '🔧',
-  'Testing and Analytics': '📊',
+  'Databases & Caching': '🗄️',
+  'DevOps & Tooling': '🔧',
+  'Testing & Analytics': '📊',
+  'AI & Agentic Workflows': '🤖',
 };
 
 export default function Skills() {
   const skills = getSkills();
+  const header = getSectionHeader('skills');
   
   // Flatten keywords for the physics engine
   const allSkillKeywords = skills.flatMap(s => s.keywords || []).map(k => ({ name: k, level: 1 }));
@@ -38,9 +41,9 @@ export default function Skills() {
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <SectionHeader
-            label="Capabilities"
-            title="Technical Skills"
-            description="Not buzzwords — daily tools used across production systems serving millions."
+            label={header.label}
+            title={header.title}
+            description={header.description}
           />
         </ScrollReveal>
 

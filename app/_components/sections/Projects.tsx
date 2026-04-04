@@ -7,19 +7,20 @@ import TechBadge from '../ui/TechBadge';
 import ScrollReveal from '../ui/ScrollReveal';
 import ProjectModal from './ProjectModal';
 import GeoPopup from './GeoPopup';
-import { getProjects, getProjectFilterTags } from '@/data/resume';
+import { getProjects, getProjectFilterTags, getSectionHeader } from '@/data/resume';
 import { useSectionNudge } from '../ui/NudgeContext';
 import type { CVProject } from '@/data/resume';
 
 export default function Projects() {
   const projects = getProjects();
   const filterTags = getProjectFilterTags();
+  const header = getSectionHeader('projects');
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [selectedProject, setSelectedProject] = useState<CVProject | null>(null);
   const [geoPopup, setGeoPopup] = useState<{ message: string; url: string } | null>(null);
 
   // Proactive Nudge for the entire Projects section
-  const projectsRef = useSectionNudge("I noticed you're looking at my projects. Want a quick summary of my biggest technical achievement?", 6000);
+  const projectsRef = useSectionNudge("I built Aumpire from scratch with Row-Level Security for multi-tenant data isolation. Want to learn how?", 6000);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === 'all') return projects;
@@ -47,9 +48,9 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <SectionHeader
-            label="Portfolio"
-            title="Featured Projects"
-            description="Each project solves a different class of problem — from enterprise platforms to real-time systems."
+            label={header.label}
+            title={header.title}
+            description={header.description}
           />
         </ScrollReveal>
 

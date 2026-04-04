@@ -13,6 +13,35 @@ export interface CVBasics {
   github?: string;
 }
 
+export interface CVHero {
+  roles: string[];
+  statusBadge: string;
+  tagline: string;
+}
+
+export interface CVAboutStat {
+  value: number;
+  suffix: string;
+  label: string;
+  dynamic?: string;
+  static?: string;
+}
+
+export interface CVAbout {
+  bio: string[];
+  stats: CVAboutStat[];
+}
+
+export interface CVSectionHeader {
+  label: string;
+  title: string;
+  description?: string;
+}
+
+export interface CVContact {
+  whatsappMessage: string;
+}
+
 export interface CVWork {
   company: string;
   location: string;
@@ -20,6 +49,7 @@ export interface CVWork {
   website: string | null;
   startDate: string;
   endDate: string | null;
+  geoRestriction?: CVGeoRestriction | null;
   highlights: string[];
 }
 
@@ -77,6 +107,11 @@ export interface CVCertification {
 
 interface CVData {
   basics: CVBasics;
+  hero: CVHero;
+  about: CVAbout;
+  sectionHeaders: Record<string, CVSectionHeader>;
+  contact: CVContact;
+  nudges: Record<string, string>;
   work: CVWork[];
   skills: CVSkillCategory[];
   projects: CVProject[];
@@ -87,7 +122,13 @@ interface CVData {
 
 const cv = resumeData as unknown as CVData;
 
+// Accessors
 export function getBasics(): CVBasics { return cv.basics; }
+export function getHero(): CVHero { return cv.hero; }
+export function getAbout(): CVAbout { return cv.about; }
+export function getSectionHeader(section: string): CVSectionHeader { return cv.sectionHeaders[section]; }
+export function getContactContent(): CVContact { return cv.contact; }
+export function getNudge(key: string): string { return cv.nudges[key] || ''; }
 export function getWorkExperience(): CVWork[] { return cv.work; }
 export function getProjects(): CVProject[] { return cv.projects; }
 export function getSkills(): CVSkillCategory[] { return cv.skills; }

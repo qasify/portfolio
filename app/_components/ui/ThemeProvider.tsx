@@ -26,15 +26,15 @@ function getSystemTheme(): 'light' | 'dark' {
 }
 
 function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') return 'system';
+  if (typeof window === 'undefined') return 'dark';
   const saved = localStorage.getItem('theme') as Theme | null;
   if (saved && ['light', 'dark', 'system'].includes(saved)) return saved;
-  return 'system';
+  return 'dark';
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
-  const [theme, setThemeState] = useState<Theme>('system');
+  const [theme, setThemeState] = useState<Theme>('dark');
   const [resolved, setResolved] = useState<'light' | 'dark'>('dark');
 
   // Mount + load saved theme (single effect to avoid double render)
@@ -89,6 +89,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
  * Put this in layout.tsx inside <head> to prevent flash.
  */
 export function ThemeScript() {
-  const script = `(function(){try{var t=localStorage.getItem('theme');var s=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';var r=t==='light'?'light':t==='dark'?'dark':s;document.documentElement.classList.add(r)}catch(e){}})()`;
+  const script = `(function(){try{var t=localStorage.getItem('theme');var r=t==='light'?'light':t==='dark'?'dark':t==='system'?(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):'dark';document.documentElement.classList.add(r)}catch(e){}})()`;
   return <script dangerouslySetInnerHTML={{ __html: script }} />;
 }

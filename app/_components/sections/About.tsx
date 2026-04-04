@@ -4,19 +4,39 @@ import SectionHeader from '../ui/SectionHeader';
 import ScrollReveal from '../ui/ScrollReveal';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import ProfileImage from '../ui/ProfileImage';
-import { getYearsOfExperience } from '@/data/resume';
+import { getYearsOfExperience, getAbout, getSectionHeader } from '@/data/resume';
+
+/** Parse simple markup tags in bio strings */
+function renderBio(text: string) {
+  // Replace <highlight>...</highlight> with accent span
+  // Replace <stat>...</stat> with emerald span
+  const parts = text.split(/(<highlight>.*?<\/highlight>|<stat>.*?<\/stat>)/g);
+  return parts.map((part, i) => {
+    const highlightMatch = part.match(/^<highlight>(.*)<\/highlight>$/);
+    if (highlightMatch) {
+      return <span key={i} className="text-accent font-medium">{highlightMatch[1]}</span>;
+    }
+    const statMatch = part.match(/^<stat>(.*)<\/stat>$/);
+    if (statMatch) {
+      return <span key={i} className="text-emerald font-medium">{statMatch[1]}</span>;
+    }
+    return part;
+  });
+}
 
 export default function About() {
   const years = getYearsOfExperience();
+  const about = getAbout();
+  const header = getSectionHeader('about');
 
   return (
     <section id="about" className="py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <SectionHeader
-            label="Introduction"
-            title="About Me"
-            description="I design and build scalable frontend systems using React and Next.js, with a focus on performance and maintainability."
+            label={header.label}
+            title={header.title}
+            description={header.description}
           />
         </ScrollReveal>
 
@@ -25,42 +45,26 @@ export default function About() {
           <div className="space-y-10">
             <ScrollReveal direction="left">
               <div className="space-y-5 text-text-secondary leading-relaxed">
-                <p>
-                  I am a Senior Frontend Engineer currently building large-scale microfrontend architectures
-                  at <span className="text-accent font-medium">Care.com</span> — serving millions of users
-                  across the platform.
-                </p>
-                <p>
-                  My work focuses on systems that make a measurable difference: optimizing search from seconds
-                  to sub-second performance, driving a <span className="text-emerald font-medium">70% increase
-                  in hiring conversions</span>, and shipping AI-assisted features that improve the user experience.
-                </p>
-                <p>
-                  Beyond writing code, I contribute to architectural decisions, mentor engineers, and run
-                  A/B tests to validate every decision with data — not assumptions.
-                </p>
+                {about.bio.map((paragraph, i) => (
+                  <p key={i}>{renderBio(paragraph)}</p>
+                ))}
               </div>
             </ScrollReveal>
 
             {/* Stats */}
             <ScrollReveal direction="left" delay={200}>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="rounded-xl border border-border-subtle bg-bg-card p-5 text-center
-                  hover:border-border-glow transition-colors">
-                  <AnimatedCounter end={years} suffix="+" label="Years Exp" />
-                </div>
-                <div className="rounded-xl border border-border-subtle bg-bg-card p-5 text-center
-                  hover:border-border-glow transition-colors">
-                  <AnimatedCounter end={6} suffix="+" label="Projects" />
-                </div>
-                <div className="rounded-xl border border-border-subtle bg-bg-card p-5 text-center
-                  hover:border-border-glow transition-colors">
-                  <AnimatedCounter end={70} suffix="%" label="Conv ↑" />
-                </div>
-                <div className="rounded-xl border border-border-subtle bg-bg-card p-5 text-center
-                  hover:border-border-glow transition-colors">
-                  <AnimatedCounter end={30} suffix="+" label="Tech" />
-                </div>
+                {about.stats.map((stat) => (
+                  <div key={stat.label} className="rounded-xl border border-border-subtle bg-bg-card p-5 text-center
+                    hover:border-border-glow transition-colors">
+                    <AnimatedCounter
+                      end={stat.dynamic === 'yearsOfExperience' ? years : stat.value}
+                      suffix={stat.suffix}
+                      label={stat.label}
+                      staticText={stat.static}
+                    />
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>

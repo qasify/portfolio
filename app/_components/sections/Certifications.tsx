@@ -2,10 +2,11 @@
 
 import SectionHeader from '../ui/SectionHeader';
 import GlassCard from '../ui/GlassCard';
-import { getCertifications } from '@/data/resume';
+import { getCertifications, getSectionHeader } from '@/data/resume';
 
 export default function Certifications() {
   const certifications = getCertifications();
+  const header = getSectionHeader('certifications');
 
   // Don't render section if no certifications yet
   if (certifications.length === 0) return null;
@@ -14,9 +15,9 @@ export default function Certifications() {
     <section id="certifications" className="py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
-          label="Credentials"
-          title="Certifications"
-          description="Validated expertise across domains."
+          label={header.label}
+          title={header.title}
+          description={header.description}
         />
 
         <div className="grid md:grid-cols-2 gap-6">

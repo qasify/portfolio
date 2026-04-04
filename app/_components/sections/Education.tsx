@@ -3,22 +3,24 @@
 import SectionHeader from '../ui/SectionHeader';
 import GlassCard from '../ui/GlassCard';
 import ScrollReveal from '../ui/ScrollReveal';
-import { getEducation, formatDateRange } from '@/data/resume';
+import { getEducation, formatDateRange, getSectionHeader } from '@/data/resume';
 
 export default function Education() {
   const education = getEducation();
+  const header = getSectionHeader('education');
 
   return (
     <section id="education" className="py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal>
           <SectionHeader
-            label="Background"
-            title="Education"
+            label={header.label}
+            title={header.title}
+            description={header.description}
           />
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className={`${education.length === 1 ? 'max-w-xl mx-auto' : 'grid md:grid-cols-2 gap-6'}`}>
           {education.map((entry, index) => {
             const dateRange = formatDateRange(entry.startDate, entry.endDate);
 

@@ -60,7 +60,7 @@ export default function ProfileImage() {
               src="/profile.jpeg"
               alt="Muhammad Qasim — Senior Frontend Engineer"
               fill
-              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
               sizes="(max-width: 640px) 256px, 288px"
               priority
             />
@@ -71,12 +71,12 @@ export default function ProfileImage() {
           </div>
 
           {/* Floating "status" chip */}
-          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 z-10
+          {/* <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 z-10
             px-4 py-1.5 rounded-full bg-bg-card/90 backdrop-blur-md border border-border-glow
             text-xs font-mono text-emerald flex items-center gap-2 shadow-lg shadow-accent/10">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald animate-pulse" />
             Open to work
-          </div>
+          </div> */}
         </div>
 
         {/* Corner accents — technical detail */}

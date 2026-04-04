@@ -2,23 +2,25 @@
 
 import SectionHeader from '../ui/SectionHeader';
 import ScrollReveal from '../ui/ScrollReveal';
-import { getBasics } from '@/data/resume';
+import { getBasics, getSectionHeader, getContactContent } from '@/data/resume';
 
 export default function Contact() {
   const basics = getBasics();
+  const header = getSectionHeader('contact');
+  const contactData = getContactContent();
 
   // Format phone for WhatsApp — strip spaces and '+' for the wa.me link
   const waNumber = basics.phone.replace(/[\s+\-()]/g, '');
-  const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent("Hi Qasim, I found your portfolio and would like to connect!")}`;
+  const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(contactData.whatsappMessage)}`;
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 bg-bg-secondary/30">
       <div className="max-w-3xl mx-auto text-center">
         <ScrollReveal>
           <SectionHeader
-            label="Connect"
-            title="Get in Touch"
-            description="Interested in working together? Let's talk about what I can bring to your team."
+            label={header.label}
+            title={header.title}
+            description={header.description}
           />
         </ScrollReveal>
 

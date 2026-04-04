@@ -10,8 +10,92 @@
     "name": "Muhammad Qasim",
     "email": "qasimwork0@gmail.com",
     "phone": "+92 301 7705367",
-    "linkedin": "https://www.linkedin.com/in/muhammad-qasim-0001b0222/",
+    "linkedin": "https://www.linkedin.com/in/qasimwork0",
     "github": "https://github.com/qasify"
+  },
+  "hero": {
+    "roles": [
+      "Senior Frontend Engineer",
+      "React & Next.js Specialist",
+      "AI-Augmented Engineer",
+      "Scalable System Builder"
+    ],
+    "statusBadge": "Available for opportunities",
+    "tagline": "Building scalable frontend systems that serve millions — powered by AI-augmented workflows that ship faster, smarter."
+  },
+  "about": {
+    "bio": [
+      "I am a Senior Frontend Engineer currently building large-scale microfrontend architectures at <highlight>Care.com</highlight> — serving millions of users across the platform.",
+      "My work focuses on systems that make a measurable difference: sub-second search performance at scale, <stat>AI-assisted content creation</stat>, and shipping features across 10+ micro-frontends that directly move platform metrics.",
+      "I operate as an <highlight>AI-first engineer</highlight> — leveraging Cursor, Claude Code, and agentic workflows (MCPs, custom rules, multi-agent orchestration) to meaningfully accelerate delivery without sacrificing code quality.",
+      "Beyond writing code, I contribute to architectural decisions, mentor engineers, and run A/B tests to validate every decision with data — not assumptions."
+    ],
+    "stats": [
+      {
+        "value": 0,
+        "suffix": "+",
+        "label": "Years Exp",
+        "dynamic": "yearsOfExperience"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "Projects"
+      },
+      {
+        "value": 30,
+        "suffix": "+",
+        "label": "Tech"
+      },
+      {
+        "value": 0,
+        "suffix": "",
+        "label": "AI-First",
+        "static": "⚡"
+      }
+    ]
+  },
+  "sectionHeaders": {
+    "about": {
+      "label": "Introduction",
+      "title": "About Me",
+      "description": "I design and build scalable frontend systems using React and Next.js — accelerated by AI-augmented engineering workflows."
+    },
+    "experience": {
+      "label": "Career",
+      "title": "Work Experience",
+      "description": "From intern to senior engineer — a career built on shipping real systems."
+    },
+    "projects": {
+      "label": "Portfolio",
+      "title": "Featured Projects",
+      "description": "Each project solves a different class of problem — from enterprise platforms to real-time systems."
+    },
+    "skills": {
+      "label": "Capabilities",
+      "title": "Technical Skills",
+      "description": "Not buzzwords — daily tools used across production systems serving millions."
+    },
+    "education": {
+      "label": "Background",
+      "title": "Education"
+    },
+    "certifications": {
+      "label": "Credentials",
+      "title": "Certifications",
+      "description": "Validated expertise across domains."
+    },
+    "contact": {
+      "label": "Connect",
+      "title": "Get in Touch",
+      "description": "Interested in working together? Let's talk about what I can bring to your team."
+    }
+  },
+  "contact": {
+    "whatsappMessage": "Hi Qasim, I found your portfolio and would like to connect!"
+  },
+  "nudges": {
+    "experience": "I work across 10+ micro-frontends at Care.com, shipping features that serve millions. Want to know the tech stack?"
   },
   "education": [
     {
@@ -22,31 +106,30 @@
       "startDate": "2018-01-01",
       "endDate": "2022-01-01",
       "gpa": null
-    },
-    {
-      "institution": "Punjab Group of Colleges",
-      "location": "Bahawalpur, Pakistan",
-      "area": "Computer Science",
-      "studyType": "Intermediate (ICS)",
-      "startDate": "2016-01-01",
-      "endDate": "2018-01-01",
-      "gpa": null
     }
   ],
   "work": [
     {
       "company": "Care.com",
-      "location": "Remote",
+      "location": "United States - Remote",
       "position": "Senior Frontend Engineer",
       "website": "https://www.care.com",
       "startDate": "2024-10-01",
       "endDate": null,
+      "geoRestriction": {
+        "message": "Care.com is only accessible in the US regions. You may need a VPN to view this site.",
+        "regions": [
+          "US"
+        ]
+      },
       "highlights": [
-        "Led and developed critical enhancements for caregiver discovery and hiring flows, optimizing large-scale microfrontends that serve millions of users on the Core platform.",
-        "Optimized search and filtering, reducing response times from seconds to sub-second performance and delivering Saved Search functionality",
-        "Owned frontend implementation for the Seeker Hiring Hub, which supported a 70% increase in job creation and hiring conversions",
-        "Executed A/B tests and implemented analytics-driven enhancements to support platform decisions.",
-        "Delivered frontend features for AI-assisted job description creation and specialized needs flows for Senior and Adult care"
+        "Led and delivered high-impact initiatives/features across 10+ of Next.js micro-frontends serving millions of users on the Core platform.",
+        "Owned frontend implementation for the Seeker Hiring Hub, from scoping and technical planning to implementation, resulting in a significant boost in job creation and hiring conversions platform-wide.",
+        "Drove major search and filtering performance improvements, bringing response times from several seconds down to sub-second, and shipped Saved Search functionality at scale.",
+        "Collaborated with product, executed A/B tests, and implemented analytics-driven enhancements to support platform decisions, and measure impact.",
+        "Delivered frontend features for AI-assisted job description creation and specialized care flows for Senior and Adult care segments.",
+        "Built and applied AI-enhanced development practices using Cursor, MCPs, and agentic workflows, meaningfully improving delivery speed.",
+        "Currently leading the Guest Hiring Hub initiative, extending premium hiring hub to basic users to unlock growth in new user upgrades."
       ]
     },
     {
@@ -56,10 +139,11 @@
       "website": null,
       "startDate": "2022-06-01",
       "endDate": null,
+      "geoRestriction": null,
       "highlights": [
-        "Designed and developed enterprise-scale web applications using React, Next.js, Node.js, TypeScript, and GraphQL",
-        "Led cross-functional collaboration in agile environments to deliver data-driven features",
-        "Mentored junior engineers and contributed to architectural decisions and code reviews"
+        "Designed and developed enterprise-scale web applications using React, Next.js, Node.js, TypeScript, and GraphQL.",
+        "Led cross-functional collaboration in agile environments to deliver data-driven features.",
+        "Mentored junior engineers and contributed to architectural decisions and code reviews."
       ]
     },
     {
@@ -69,9 +153,10 @@
       "website": null,
       "startDate": "2021-06-01",
       "endDate": "2021-09-01",
+      "geoRestriction": null,
       "highlights": [
-        "Developed a native Android application using Kotlin with Firebase integration",
-        "Published mobile application on the Google Play Store with over 1,000 downloads"
+        "Developed a native Android application using Kotlin with Firebase integration.",
+        "Published mobile application on the Google Play Store with over 1,000 downloads."
       ]
     }
   ],
@@ -84,11 +169,12 @@
         "Next.js",
         "TS/JS",
         "Tailwind CSS",
-        "MFEs",
+        "Micro-frontends",
         "React Native",
         "MUI",
         "Angular",
-        "Storybook"
+        "Storybook",
+        "Monorepos"
       ]
     },
     {
@@ -101,11 +187,12 @@
         "GraphQL",
         "REST APIs",
         "Python",
-        "Django"
+        "Django",
+        "Real-time Systems"
       ]
     },
     {
-      "name": "Databases and Caching",
+      "name": "Databases & Caching",
       "level": "Intermediate",
       "keywords": [
         "MongoDB",
@@ -117,19 +204,20 @@
       ]
     },
     {
-      "name": "DevOps and Tooling",
+      "name": "DevOps & Tooling",
       "level": "Intermediate",
       "keywords": [
         "Docker",
         "Git",
         "CI/CD",
         "LaunchDarkly",
+        "Feature Flags",
         "Sentry",
         "Splunk"
       ]
     },
     {
-      "name": "Testing and Analytics",
+      "name": "Testing & Analytics",
       "level": "Advanced",
       "keywords": [
         "Jest",
@@ -137,31 +225,43 @@
         "Cypress",
         "Amplitude",
         "A/B Testing",
+        "Test-driven Development",
         "Performance Optimization"
+      ]
+    },
+    {
+      "name": "AI & Agentic Workflows",
+      "level": "Advanced",
+      "keywords": [
+        "Cursor",
+        "Claude Code",
+        "MCPs",
+        "Custom Rules & Skills",
+        "Multi-Agent Orchestration",
+        "AI-Assisted Development"
       ]
     }
   ],
   "projects": [
     {
-      "name": "Care.com - Seeker Hiring Hub and Platform Optimization",
-      "description": "Owned frontend implementation for the premium hiring experience, redesigning the end-to-end hiring flow, optimizing caregiver search, and delivering analytics-driven features that contributed to a 70% increase in job success.",
+      "name": "Care.com - Core Platform",
+      "description": "Senior Frontend Engineer on the Core platform serving millions of users across 10+ Next.js micro-frontends, with a focus on search performance, AI-assisted flows, and conversion-driven feature delivery.",
       "url": "https://www.care.com",
       "keywords": [
-        "React",
         "Next.js",
-        "Apollo GraphQL",
-        "NestJS",
-        "Microfrontends",
+        "React",
+        "TypeScript",
+        "Micro-frontends",
+        "A/B Testing",
+        "LaunchDarkly",
         "Amplitude",
-        "LaunchDarkly A/B test",
-        "Jest"
+        "AI Integration"
       ],
       "filterTags": [
-        "React / Next.js",
-        "Node.js"
+        "React / Next.js"
       ],
       "geoRestriction": {
-        "message": "Care.com is currently available in the USA only. You may need a US location or VPN to access the website.",
+        "message": "Care.com is only accessible in the US regions. You may need a VPN to view this site.",
         "regions": [
           "US"
         ]
@@ -170,7 +270,7 @@
         "screenshots": [],
         "recordings": []
       },
-      "details": "Led the frontend architecture for Care.com's premium hiring experience, the Seeker Hiring Hub. This involved redesigning the complete end-to-end hiring flow across a large-scale microfrontend system. Key contributions include optimizing caregiver search from seconds to sub-second performance, implementing Saved Search functionality, and delivering AI-assisted job description creation. The work was validated through A/B tests using LaunchDarkly and Amplitude analytics, directly contributing to a 70% increase in job creation and hiring conversions across the platform."
+      "details": "Working as a Senior Frontend Engineer on Care.com's Core platform — a large-scale Next.js micro-frontend architecture serving millions of users. Key technical contributions include: architecting sub-second search and filtering across complex data sets, building AI-assisted job description creation flows, implementing feature flags with LaunchDarkly for safe rollouts, running data-driven A/B experiments via Amplitude, and leading the Guest Hiring Hub initiative. The stack spans TypeScript, React, Next.js, and a mature CI/CD pipeline with Playwright E2E coverage."
     },
     {
       "name": "Aumpire - Financial/Audit Management System",
@@ -294,12 +394,6 @@
       "date": null,
       "awarder": "HackerRank",
       "summary": "Demonstrated foundational proficiency in React"
-    },
-    {
-      "title": "70 Percent Job Creation Increase",
-      "date": null,
-      "awarder": "Care.com",
-      "summary": "Frontend contributions to a highly successful platform initiative that increased hiring conversions by 70 percent"
     }
   ],
   "certifications": [],

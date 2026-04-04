@@ -115,10 +115,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-emerald flex items-center justify-center
+            {/* <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-emerald flex items-center justify-center
               text-bg-primary font-bold text-sm group-hover:shadow-lg group-hover:shadow-accent/20 transition-shadow">
               Q
-            </div>
+            </div> */}
             <span className="font-semibold text-text-primary hidden sm:block">
               Qasim<span className="text-accent">.dev</span>
             </span>
@@ -139,9 +139,9 @@ export default function Navbar() {
             {/* Optional Mode Toggle */}
             <div className="hidden lg:flex ml-2 pl-4 border-l border-border-subtle items-center gap-2">
               <ModeToggle />
-              <div className="hidden xl:flex items-center gap-2 ml-2 px-2 py-1 bg-bg-secondary rounded border border-border-subtle text-[10px] font-mono text-text-muted cursor-default" title="Command Palette">
+              {/* <div className="hidden xl:flex items-center gap-2 ml-2 px-2 py-1 bg-bg-secondary rounded border border-border-subtle text-[10px] font-mono text-text-muted cursor-default" title="Command Palette">
                 <span className="text-[14px]">⌘</span>K
-              </div>
+              </div> */}
             </div>
 
             <div className="ml-2 pl-2 border-l border-border-subtle">

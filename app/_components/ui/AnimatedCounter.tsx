@@ -7,9 +7,10 @@ interface AnimatedCounterProps {
   suffix?: string;
   label: string;
   duration?: number;
+  staticText?: string;
 }
 
-export default function AnimatedCounter({ end, suffix = '', label, duration = 2000 }: AnimatedCounterProps) {
+export default function AnimatedCounter({ end, suffix = '', label, duration = 2000, staticText }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ export default function AnimatedCounter({ end, suffix = '', label, duration = 20
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          animateCount();
+          if (!staticText) animateCount();
         }
       },
       { threshold: 0.5 }
@@ -46,7 +47,7 @@ export default function AnimatedCounter({ end, suffix = '', label, duration = 20
     <div ref={ref} className="text-center">
       <div className="text-3xl md:text-4xl font-bold text-text-primary">
         <span className="bg-gradient-to-r from-accent to-emerald bg-clip-text text-transparent">
-          {count}{suffix}
+          {staticText || `${count}${suffix}`}
         </span>
       </div>
       <div className="text-text-muted text-sm mt-1 font-mono">{label}</div>
