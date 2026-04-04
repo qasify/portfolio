@@ -7,7 +7,7 @@ import TechBadge from '../ui/TechBadge';
 import ScrollReveal from '../ui/ScrollReveal';
 import ProjectModal from './ProjectModal';
 import GeoPopup from './GeoPopup';
-import { getProjects, getProjectFilterTags, getSectionHeader } from '@/data/resume';
+import { getProjects, getProjectFilterTags, getSectionHeader, getNudge } from '@/data/resume';
 import { useSectionNudge } from '../ui/NudgeContext';
 import type { CVProject } from '@/data/resume';
 
@@ -20,7 +20,8 @@ export default function Projects() {
   const [geoPopup, setGeoPopup] = useState<{ message: string; url: string } | null>(null);
 
   // Proactive Nudge for the entire Projects section
-  const projectsRef = useSectionNudge("I built Aumpire from scratch with Row-Level Security for multi-tenant data isolation. Want to learn how?", 6000);
+  const nudgeMessage = getNudge('projects');
+  const projectsRef = useSectionNudge(nudgeMessage, 6000);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === 'all') return projects;

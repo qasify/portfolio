@@ -95,7 +95,8 @@
     "whatsappMessage": "Hi Qasim, I found your portfolio and would like to connect!"
   },
   "nudges": {
-    "experience": "I work across 10+ micro-frontends at Care.com, shipping features that serve millions. Want to know the tech stack?"
+    "experience": "I work across 10+ micro-frontends at Care.com, shipping features that serve millions. Want to know the tech stack?",
+    "projects": "I help ship features to millions of users on Care.com's Core platform. Want to see how we architect micro-frontends at scale?"
   },
   "education": [
     {
