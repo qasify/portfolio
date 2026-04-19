@@ -55,12 +55,12 @@ export default function ProfileImage() {
           />
 
           {/* Image frame */}
-          <div className="relative w-64 h-72 sm:w-72 sm:h-80 rounded-2xl overflow-hidden border-2 border-bg-primary">
+          <div className="relative w-64 h-72 sm:w-72 sm:h-88 rounded-2xl overflow-hidden border-2 border-bg-primary">
             <Image
               src="/profile.jpeg"
               alt="Muhammad Qasim — Senior Frontend Engineer"
               fill
-              className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
               sizes="(max-width: 640px) 256px, 288px"
               priority
             />
