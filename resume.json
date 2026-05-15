@@ -9,8 +9,8 @@
   "basics": {
     "name": "Muhammad Qasim",
     "email": "qasimwork0@gmail.com",
-    "phone": "+92 301 7705367",
-    "linkedin": "https://www.linkedin.com/in/qasimwork0",
+    "phone": "+92 311 4705367",
+    "linkedin": "https://www.linkedin.com/in/qasify",
     "github": "https://github.com/qasify"
   },
   "hero": {
@@ -139,7 +139,7 @@
       "position": "Full-Stack Web Developer to Senior Frontend Engineer",
       "website": null,
       "startDate": "2022-06-01",
-      "endDate": null,
+      "endDate": "2026-05-01",
       "geoRestriction": null,
       "highlights": [
         "Designed and developed enterprise-scale web applications using React, Next.js, Node.js, TypeScript, and GraphQL.",
